@@ -1,42 +1,91 @@
-body {
-    font-family: Arial, sans-serif;
+/* Global Styles */
+body, input, select, textarea {
+    color: #333333; /* Updated global text color to a dark grey */
+    font-family: "Roboto", Helvetica, sans-serif; /* Updated to modern, tech-centric font */
+    background-color: #F5F5F5; /* Updated background color for a softer grey look */
+    line-height: 1.6;
     margin: 0;
     padding: 0;
 }
 
-nav {
-    background-color: #333;
-    padding: 1em;
+/* Heading Styles */
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Montserrat", Helvetica, sans-serif; /* Updated to a bold, modern heading font */
+    color: #007BFF; /* Updated heading color to a bright tech blue */
+    margin-bottom: 1rem;
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    padding: 0;
-}
+h1 { font-weight: 700; }
+h2 { font-weight: 600; }
+h3, h4, h5, h6 { font-weight: 500; }
 
-nav ul li {
-    margin: 0 1em;
-}
-
-nav ul li a {
-    color: white;
+/* Link Styles */
+a {
+    color: #1E90FF; /* Updated link color for a vibrant, tech-inspired look */
     text-decoration: none;
-    font-weight: bold;
+    transition: color 0.3s ease;
 }
 
-section {
-    padding: 2em;
+a:hover {
+    color: #00FF00; /* Updated hover effect for links */
+}
+
+/* Button Styles */
+.button {
+    background-color: #007BFF; /* Updated button background color */
+    color: #FFFFFF !important; /* Updated button text color */
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2); /* Updated box shadow for a more dynamic button effect */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    box-shadow: 0 6px 12px rgba(0, 123, 255, 0.3); /* Enhanced shadow on hover */
+}
+
+/* Layout Styles */
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Animations */
+.fade-in {
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Accessibility Enhancements */
+a:focus,
+button:focus {
+    outline: 2px solid #007BFF;
+    outline-offset: 2px;
+}
+
+/* Utility Classes */
+.margin-bottom-lg {
+    margin-bottom: 2rem;
+}
+
+.text-center {
     text-align: center;
 }
 
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 1em;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr; /* Stacks columns on smaller screens */
+    }
 }
